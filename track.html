@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #faf6f0;
+      padding-top: 100px;
+      color: #5E4632;
+    }
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #8B5E3C;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner"></div>
+  <h2>Redirecting you to Mycology Folks...</h2>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (id) {
+      const img = document.createElement('img');
+      img.src = `https://script.google.com/macros/s/AKfycbwj21hLFj1nXiXK8Rj8iQ3a6WbWbWBRSNIw0-WrBVsQzX9tS9pQWLb79O5Xc3G7HdUREA/exec?id=${id}&action=click`;
+      img.style.display = 'none';
+      document.body.appendChild(img);
+    }
+
+    setTimeout(() => {
+      window.location.href = 'https://www.mycologyfolks.com';
+    }, 800);
+  </script>
+</body>
+</html>
